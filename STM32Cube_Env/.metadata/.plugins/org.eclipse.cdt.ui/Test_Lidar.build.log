@@ -1,0 +1,24 @@
+10:48:53 **** Incremental Build of configuration Debug for project Test_Lidar ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:82:18: warning: unused variable 'i' [-Wunused-variable]
+   82 |         uint32_t i = 0;
+      |                  ^
+../Core/Src/main.c:81:17: warning: unused variable 'drapeau_fin_tour_old' [-Wunused-variable]
+   81 |         uint8_t drapeau_fin_tour_old = 0; // Variable pour le Lidar
+      |                 ^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Test_Lidar.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Clement\Documents\Voiture_Autonome\Voiture_APP5\STM32Cube_Env\Test_Lidar\STM32L432KCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_Lidar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test_Lidar.elf
+ 
+arm-none-eabi-size  Test_Lidar.elf 
+arm-none-eabi-objdump -h -S Test_Lidar.elf  > "Test_Lidar.list"
+   text	   data	    bss	    dec	    hex	filename
+  18792	     20	   2660	  21472	   53e0	Test_Lidar.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test_Lidar.list
+ 
+
+10:48:54 Build Finished. 0 errors, 2 warnings. (took 1s.272ms)
+
