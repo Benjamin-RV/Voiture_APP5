@@ -6,7 +6,7 @@ from pyrplidar import PyRPlidar
 
 # Configuration
 LIDAR_PORT = "/dev/ttyUSB0"  # Modifier selon le port correct
-UDP_IP = "192.168.1.32"  # Remplace par l'IP de ton PC
+UDP_IP = "192.168.97.164"  # Remplace par l'IP de ton PC
 UDP_PORT = 5005  # Port UDP d'envoi
 
 # Initialisation UDP avec un buffer plus grand
